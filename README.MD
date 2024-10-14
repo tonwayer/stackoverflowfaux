@@ -1,4 +1,4 @@
-# Sayari Knowsharing Center
+# Sayari Knowledge Sharing Center
 
 This is a simplified Sayari Knowsharing Center, implementing core functionalities such as posting questions, answers, comments, and searching using Elasticsearch. The application is built with a TypeScript backend using Express and TypeORM, a React frontend, and uses PostgreSQL as the database.
 
