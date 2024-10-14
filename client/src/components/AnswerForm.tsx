@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
+import { useAuth } from '../hooks/useAuth';
 
 interface AnswerFormProps {
   questionId: number;
@@ -8,18 +9,17 @@ interface AnswerFormProps {
 
 const AnswerForm: React.FC<AnswerFormProps> = ({ questionId, onAnswerSubmitted  }) => {
   const [body, setBody] = useState('');
+  const { user } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Assuming userId is available (e.g., from authentication)
-    const userId = 1; // Replace with actual user ID
+    const userId = user?.id;
 
     try {
       await api.post(`/answers/`, { body, userId, questionId });
       setBody('');
       onAnswerSubmitted();
-      // Optionally, refresh the question details or update the state
     } catch (error) {
       console.error('Error submitting answer:', error);
     }

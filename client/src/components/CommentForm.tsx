@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
+import { useAuth } from '../hooks/useAuth';
 
 interface CommentFormProps {
   questionId: number;
@@ -8,11 +9,12 @@ interface CommentFormProps {
 
 export const CommentForm: React.FC<CommentFormProps> = ({ questionId, onCommentSubmitted }) => {
   const [body, setBody] = useState('');
+  const { user } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const userId = 1; // Replace with actual user ID
+    const userId = user?.id;
 
     try {
       await api.post(`/comments/question/${questionId}`, { body, userId });
