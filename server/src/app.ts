@@ -2,6 +2,7 @@ import express from 'express';
 import { AppDataSource } from './ormconfig';
 import 'reflect-metadata';
 import routes from './routes';
+import cors from 'cors'
 
 const PORT = 3000;
 
@@ -12,6 +13,7 @@ AppDataSource.initialize()
   .then(() => {
     console.log('Data Source has been initialized!');
 
+    app.use(cors());
     app.use('/api', routes);
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
