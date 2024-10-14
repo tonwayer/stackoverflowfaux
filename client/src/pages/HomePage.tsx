@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../services/api';
+import api from '../services/api';
 import { QuestionList, Question } from '../components/QuestionList';
 
 const HomePage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
 
   useEffect(() => {
-    axios.get<Question[]>('/questions')
+    api.get<Question[]>('/questions')
       .then((response) => {
         setQuestions(response.data);
       })
