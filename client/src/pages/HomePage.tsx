@@ -16,7 +16,6 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     <div>
-      <h1>All Questions</h1>
       <QuestionList questions={questions} />
     </div>
   );
