@@ -1,4 +1,3 @@
-// src/entity/Answer.ts
 import {
     Entity,
     PrimaryGeneratedColumn,
