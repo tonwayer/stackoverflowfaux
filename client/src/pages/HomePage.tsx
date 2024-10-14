@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../services/api';
-import {QuestionList, Question} from '../components/QuestionList';
+import { QuestionList, Question } from '../components/QuestionList';
 
 const HomePage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -14,6 +14,7 @@ const HomePage: React.FC = () => {
         console.error('Error fetching questions:', error);
       });
   }, []);
+
   return (
     <div>
       <QuestionList questions={questions} />
