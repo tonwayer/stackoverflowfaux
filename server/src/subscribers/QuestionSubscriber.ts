@@ -17,7 +17,7 @@ export class QuestionSubscriber implements EntitySubscriberInterface<Question> {
         id: question.id,
         title: question.title,
         body: question.body,
-        userId: question.user.id,
+        user: question.user,
         score: question.score,
       },
     });

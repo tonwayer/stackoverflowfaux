@@ -1,7 +1,6 @@
 import { elasticClient } from './elasticsearch';
 
 export async function createIndexes() {
-  // Create an index for questions
   await elasticClient.indices.create({
     index: 'questions',
     body: {
@@ -10,14 +9,13 @@ export async function createIndexes() {
           id: { type: 'integer' },
           title: { type: 'text' },
           body: { type: 'text' },
-          userId: { type: 'integer' },
+          user: { type: 'object' },
           score: { type: 'integer' },
         },
       },
     },
-  }, { ignore: [400] }); // Ignore error if index already exists
+  }, { ignore: [400] });
 
-  // Create an index for answers
   await elasticClient.indices.create({
     index: 'answers',
     body: {

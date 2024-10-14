@@ -18,7 +18,7 @@ export const QuestionList = ({ questions }: Props) => {
 
   return (
     <ul className="divide-y divide-gray-200">
-      {questions.map((question) => (
+      {questions?.map((question) => (
         <div className="py-6" key={question.id}>
           <article>
             <p className="text-base font-medium leading-6 text-gray-500">{new Date(question.creation).toLocaleString()}</p>

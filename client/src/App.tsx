@@ -6,14 +6,14 @@ import QuestionPage from './pages/QuestionPage';
 
 const App: React.FC = () => {
   return (
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/questions/:id" element={<QuestionPage />} />
         </Routes>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   );
 };
 

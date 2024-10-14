@@ -11,6 +11,6 @@ router.use('/users', userRouter);
 router.use('/questions', questionRouter);
 router.use('/answers', answerRouter);
 router.use('/comments', commentRouter);
-router.use('/search', questionRouter);
+router.use('/search', searchRouter);
 
 export default router;

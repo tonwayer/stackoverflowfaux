@@ -3,7 +3,7 @@ import { elasticClient } from '../utils/elasticsearch';
 
 const router = Router();
 
-router.get('/search', async (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
   const { q } = req.query;
 
   if (typeof q !== 'string' || !q) {
