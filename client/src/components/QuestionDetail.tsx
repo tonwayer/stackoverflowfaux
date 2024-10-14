@@ -72,13 +72,15 @@ const QuestionDetail: React.FC<QuestionDetailProps> = ({ questionId }) => {
         <div className="ml-3 border-t-[1px] divide-y divide-gray-200 py-2 my-2">
           {
             question.comments?.map((commnet) =>
-              <div className="py-2">
-                {commnet.body}
+              <div className="py-2 flex">
+                <p>
+                  {commnet.body}
+                </p>
               </div>
             )
           }
           <div>
-            <CommentForm questionId={question.id} onCommentSubmitted={fetchQuestion}/>
+            <CommentForm questionId={question.id} onCommentSubmitted={fetchQuestion} />
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export const CommentForm: React.FC<CommentFormProps> = ({ questionId, onCommentS
     const userId = user?.id;
 
     try {
-      await api.post(`/comments/question/${questionId}`, { body, userId });
+      await api.post(`/comments/question/${questionId}`, { body, userId, questionId });
       setBody('');
       onCommentSubmitted();
     } catch (error) {
