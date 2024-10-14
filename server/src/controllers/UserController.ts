@@ -25,6 +25,16 @@ class UserController {
       res.status(500).json({ error });
     }
   }
+
+  async getUserById(req: Request, res: Response) {
+    try {
+      const userId = parseInt(req.params.id)
+      const user = await AppDataSource.getRepository(User).findOne({ where: { id: userId } });
+      res.json(user);
+    } catch (error) {
+      res.status(500).json({ error });
+    }
+  }
 }
 
 export const userController = new UserController();
