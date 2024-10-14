@@ -42,6 +42,7 @@ This is a simplified Sayari Knowsharing Center, implementing core functionalitie
 
 ```bash
 git clone https://github.com/tonwayer/stackoverflowfaux
+cd ./stackoverflowfaux
 ```
 
 ### 2. Run with Docker
