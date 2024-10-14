@@ -27,7 +27,12 @@ class QuestionController {
             'comments',
             'answers.user',
             'answers.comments'
-          ]
+          ],
+          order: {
+            answers: {
+              creation: 'ASC',
+            },
+          },
         });
       res.status(200).json(question);
     } catch (error) {
